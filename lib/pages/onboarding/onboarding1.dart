@@ -1,8 +1,10 @@
+import 'package:bootcamp_pratice/pages/onboarding/index.dart';
 import 'package:bootcamp_pratice/pages/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Onboarding1 extends StatelessWidget {
-  const Onboarding1 ({super.key});
+class Onboarding1 extends GetView<OnboardingController> {
+  const Onboarding1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,8 @@ class Onboarding1 extends StatelessWidget {
             color: const Color(0xff100D40),
             name: 'Next Step',
             ontap: () {
-              Navigator.pushNamed(context, '/Onboarding2');
+              Get.off(() => Onboarding2());
+              //Navigator.pushNamed(context, '/Onboarding2');
             },
           ),
           const SizedBox(

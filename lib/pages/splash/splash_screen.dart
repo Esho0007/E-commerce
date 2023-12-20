@@ -154,25 +154,32 @@
 //   }
 // }
 
+import 'package:bootcamp_pratice/pages/splash/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
+  // @override
+  // final SplashController controller = Get.put(SplashController());
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: InkWell(
-        onTap: (){
-          Navigator.pushNamed(context, '/Onboarding1');
-        },
-        child: Container(
-          height: 1000,
-          width: double.infinity,
-          color:  const Color(0xFF100D40),
-          child: Image.asset("assets/images/ass1.png",),
-        ),
-      ),
+    return Scaffold(
+      body: GetBuilder(
+          init: SplashController(),
+          builder: (controller) {
+            return Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: const Color(0xFF100D40),
+              child: Center(
+                child: Image.asset(
+                  "assets/images/ass1.png",
+                ),
+              ),
+            );
+          }),
     );
   }
 }

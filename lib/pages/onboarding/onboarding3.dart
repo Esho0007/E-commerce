@@ -1,7 +1,9 @@
+import 'package:bootcamp_pratice/common/routes/names.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Onboarding3 extends StatelessWidget {
-  const Onboarding3 ({super.key});
+  const Onboarding3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +58,13 @@ class Onboarding3 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 28.0),
             child: InkWell(
-              onTap: (){
-                Navigator.pushNamed(context,'/SignUpScreen');
+              onTap: () {
+                Get.offAllNamed(AppRoutes.signup);
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => SignUpScreen(),
+                //     ));
               },
               child: Container(
                 height: 60,
@@ -77,7 +84,7 @@ class Onboarding3 extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 10),
             child: Container(
               height: 60,
               width: double.infinity,
@@ -89,13 +96,13 @@ class Onboarding3 extends StatelessWidget {
                 child: Text(
                   "Login Now",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,color: Color(0xff100D40),),
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff100D40),
+                  ),
                 ),
               ),
             ),
           ),
-
-
         ],
       ),
     );

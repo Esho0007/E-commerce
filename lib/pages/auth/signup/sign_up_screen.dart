@@ -1,6 +1,8 @@
+import 'package:bootcamp_pratice/common/routes/names.dart';
 import 'package:bootcamp_pratice/pages/widget/custom_button.dart';
 import 'package:bootcamp_pratice/pages/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {
   final _name = TextEditingController();
@@ -115,18 +117,21 @@ class SignUpScreen extends StatelessWidget {
               color: const Color(0xff100D40),
               name: "Sign Up",
               ontap: () {
-                Navigator.pushNamed(context, '/HomeScreen');
+                Get.offAllNamed(AppRoutes.home);
+                //  Navigator.pushNamed(context, '/HomeScreen');
               }),
           const SizedBox(
             height: 15,
           ),
           CustomButton(
-              color: Colors.white,
-              name: "With Your Phone Number",
-              textColor: Colors.black,
-              ontap: () {}),
+            color: Colors.white,
+            name: "With Your Phone Number",
+            textColor: Colors.black,
+            border: 2,
+            ontap: () {},
+          ),
           const SizedBox(
-            height: 15,
+            height: 20,
           ),
           const Padding(
             padding: EdgeInsets.all(18.0),
