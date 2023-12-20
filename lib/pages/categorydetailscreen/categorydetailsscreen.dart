@@ -1,12 +1,17 @@
-import 'package:bootcamp_pratice/pages/widget/custom_bott_bar.dart';
+import 'package:bootcamp_practice/pages/widget/custom_bott_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import '../../common/routes/names.dart';
+
+class CategoryDetailsScreen extends StatelessWidget {
+  const CategoryDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffefefe),
       body: ListView(
         children: [
           //row
@@ -15,12 +20,17 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200, shape: BoxShape.circle),
-                  child: const Icon(Icons.arrow_back),
+                InkWell(
+                  onTap:(){
+                    Get.back();
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200, shape: BoxShape.circle),
+                    child: const Icon(Icons.arrow_back),
+                  ),
                 ),
                 Container(
                   height: 40,
@@ -33,12 +43,17 @@ class HomeScreen extends StatelessWidget {
                     "assets/images/niky.png",
                   ),
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200, shape: BoxShape.circle),
-                  child: Image.asset("assets/images/Bag.png"),
+                InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoutes.cartscreen);
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200, shape: BoxShape.circle),
+                    child: Image.asset("assets/images/Bag.png"),
+                  ),
                 ),
               ],
             ),
@@ -95,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: (){
-                        Navigator.pushNamed(context, '/DetailScreen');
+                        Get.toNamed( '/DetailScreen');
                       },
                       child: Stack(
                         children: [
