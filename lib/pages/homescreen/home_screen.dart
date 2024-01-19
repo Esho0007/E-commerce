@@ -1,7 +1,6 @@
 import 'package:bootcamp_practice/model/product%20model/product.dart';
 import 'package:bootcamp_practice/pages/detailscreen/detail_screen.dart';
 import 'package:bootcamp_practice/services/http_helper.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../common/routes/names.dart';
@@ -131,20 +130,43 @@ class HomeScreen extends StatelessWidget {
                     );
                   }
                   return Container(
-                    // height: 40,
-                    // width: 100,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    width: double.infinity,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.length,
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         ProductCategory productCategory = snapshot.data![index];
-                        return Container(
-                          height: 40,
-                          width: 100,
-                          child: ListTile(
-                            leading: Text("3425"),
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 5),
+                          child: Container(
+                            padding: const EdgeInsets.only(right: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.5),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          productCategory.image,
+                                        ),
+                                      )),
+                                ),
+                                const SizedBox(width: 5),
+                                Text(productCategory.name.toString()),
+                              ],
+                            ),
                           ),
                         );
                       },

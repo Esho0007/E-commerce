@@ -1,7 +1,5 @@
 import 'package:bootcamp_practice/common/routes/names.dart';
 import 'package:bootcamp_practice/dashboard/dashboard.dart';
-import 'package:bootcamp_practice/model/product%20model/product.dart';
-import 'package:bootcamp_practice/pages/detailscreen/detail_screen.dart';
 import 'package:bootcamp_practice/pages/homescreen/index.dart';
 import 'package:bootcamp_practice/pages/onboarding/index.dart';
 import 'package:get/get.dart';
@@ -19,7 +17,6 @@ import '../../pages/categorydetailscreen/binding.dart';
 import '../../pages/categorydetailscreen/categorydetailsscreen.dart';
 import '../../pages/confirmscreen/binding.dart';
 import '../../pages/confirmscreen/confirm_screen.dart';
-import '../../pages/detailscreen/binding.dart';
 import '../../pages/paymentscreen/binding.dart';
 import '../../pages/paymentscreen/payment_screen.dart';
 import '../../pages/reviewscreen/binding.dart';

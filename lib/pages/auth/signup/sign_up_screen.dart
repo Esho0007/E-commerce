@@ -1,3 +1,5 @@
+import 'package:bootcamp_practice/pages/widget/custom_button.dart';
+import 'package:bootcamp_practice/pages/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -114,7 +116,7 @@ class SignUpScreen extends StatelessWidget {
               color: const Color(0xff100D40),
               name: "Sign Up",
               ontap: () {
-                Navigator.pushNamed(context, '/HomeScreen');
+                Navigator.pushNamed(context, '/home');
               }),
           const SizedBox(
             height: 15,

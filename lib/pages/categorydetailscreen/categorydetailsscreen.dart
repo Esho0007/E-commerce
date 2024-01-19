@@ -1,7 +1,6 @@
 import 'package:bootcamp_practice/pages/widget/custom_bott_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../common/routes/names.dart';
 
@@ -21,7 +20,7 @@ class CategoryDetailsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
-                  onTap:(){
+                  onTap: () {
                     Get.back();
                   },
                   child: Container(
@@ -44,7 +43,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(AppRoutes.cartscreen);
                   },
                   child: Container(
@@ -109,8 +108,8 @@ class CategoryDetailsScreen extends StatelessWidget {
                 Column(
                   children: [
                     InkWell(
-                      onTap: (){
-                        Get.toNamed( '/DetailScreen');
+                      onTap: () {
+                        Get.toNamed('/DetailScreen');
                       },
                       child: Stack(
                         children: [
@@ -147,7 +146,9 @@ class CategoryDetailsScreen extends StatelessWidget {
                             color: Color(0xff1D1E20),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text("£99",
                             style: TextStyle(
                                 color: Color(0xff1D1E20),
@@ -177,7 +178,6 @@ class CategoryDetailsScreen extends StatelessWidget {
                           right: 22,
                           child: Image.asset("assets/images/Heart.png"),
                         ),
-
                       ],
                     ),
                     const Column(
@@ -189,7 +189,9 @@ class CategoryDetailsScreen extends StatelessWidget {
                             color: Color(0xff1D1E20),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text("£79",
                             style: TextStyle(
                                 color: Color(0xff1D1E20),
@@ -234,7 +236,9 @@ class CategoryDetailsScreen extends StatelessWidget {
                             color: Color(0xff1D1E20),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text("£99",
                             style: TextStyle(
                                 color: Color(0xff1D1E20),
@@ -274,7 +278,9 @@ class CategoryDetailsScreen extends StatelessWidget {
                             color: Color(0xff1D1E20),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text("£69",
                             style: TextStyle(
                                 color: Color(0xff1D1E20),
