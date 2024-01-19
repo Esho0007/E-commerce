@@ -1,13 +1,12 @@
 import 'dart:async';
-
-import 'package:bootcamp_pratice/common/routes/names.dart';
-import 'package:bootcamp_pratice/pages/onboarding/index.dart';
+import 'package:bootcamp_practice/common/routes/names.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
 
 class SplashController extends GetxController {
   SplashController();
+
   // var state = SplashState();
 
   // @override

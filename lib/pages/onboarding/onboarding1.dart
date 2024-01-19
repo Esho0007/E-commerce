@@ -1,7 +1,8 @@
-import 'package:bootcamp_pratice/pages/onboarding/index.dart';
-import 'package:bootcamp_pratice/pages/widget/custom_button.dart';
+import 'package:bootcamp_practice/pages/onboarding/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../widget/custom_button.dart';
 
 class Onboarding1 extends GetView<OnboardingController> {
   const Onboarding1({super.key});
@@ -9,6 +10,7 @@ class Onboarding1 extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffefefe),
       body: ListView(
         children: [
           const SizedBox(

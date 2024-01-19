@@ -1,4 +1,4 @@
-import 'package:bootcamp_pratice/common/routes/pages.dart';
+import 'package:bootcamp_practice/common/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

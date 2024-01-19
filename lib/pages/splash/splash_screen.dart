@@ -154,7 +154,7 @@
 //   }
 // }
 
-import 'package:bootcamp_pratice/pages/splash/controller.dart';
+import 'package:bootcamp_practice/pages/splash/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -20,12 +20,12 @@ class CustomButton extends StatelessWidget {
       child: InkWell(
         onTap: ontap,
         child: Container(
-          height: 60,
+          height: 50,
           width: double.infinity,
           decoration: BoxDecoration(
             color: color,
             border: Border.all(width: border),
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Center(
             child: Text(

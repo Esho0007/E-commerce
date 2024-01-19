@@ -1,4 +1,4 @@
-import 'package:bootcamp_pratice/pages/onboarding/onboarding3.dart';
+import 'package:bootcamp_practice/pages/onboarding/onboarding3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +10,7 @@ class Onboarding2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffefefe),
       body: ListView(
         children: [
           const SizedBox(

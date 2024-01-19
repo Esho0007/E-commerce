@@ -1,4 +1,4 @@
-import 'package:bootcamp_pratice/pages/auth/signup/controller.dart';
+import 'package:bootcamp_practice/pages/auth/signup/controller.dart';
 import 'package:get/get.dart';
 
 class SignUpBinding implements Bindings {

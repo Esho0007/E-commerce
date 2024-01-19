@@ -1,4 +1,4 @@
-library homescren;
+library homescreen;
 
 export './binding.dart';
 export './controller.dart';

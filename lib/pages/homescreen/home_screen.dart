@@ -1,306 +1,228 @@
-import 'package:bootcamp_pratice/pages/widget/custom_bott_bar.dart';
+import 'package:bootcamp_practice/model/product%20model/product.dart';
+import 'package:bootcamp_practice/pages/detailscreen/detail_screen.dart';
+import 'package:bootcamp_practice/services/http_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../common/routes/names.dart';
+import '../../model/category model/category_model.dart';
+import '../widget/custom_textfield.dart';
+import '../widget/page_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final _controller = TextEditingController();
+
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          //row
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200, shape: BoxShape.circle),
-                  child: const Icon(Icons.arrow_back),
-                ),
-                Container(
-                  height: 40,
-                  width: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.grey.shade200,
+      backgroundColor: const Color(0xfffefefe),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //row
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 28.0, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    "assets/images/Menu.png",
                   ),
-                  child: Image.asset(
-                    "assets/images/niky.png",
-                  ),
-                ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade200, shape: BoxShape.circle),
-                  child: Image.asset("assets/images/Bag.png"),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "365 Items",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    Text("Available in stock",
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14,
-                            color: Colors.grey.shade600))
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  height: 40,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade200),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.edit),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "Edit",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    InkWell(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/DetailScreen');
+                  InkWell(
+                      onTap: () {
+                        Get.toNamed("/cartscreen");
                       },
-                      child: Stack(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(32),
-                            child: Image.asset(
-                              "assets/images/per3.png",
-                              height: 200,
-                              width: 150,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Positioned(
-                            top: 22,
-                            right: 22,
-                            child: Image.asset("assets/images/Heart.png"),
-                          ),
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            left: 0,
-                            bottom: -350,
-                            child: Image.asset("assets/images/Log.png"),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Nike Sport Wear Club \nFlees",
-                          style: TextStyle(
-                            color: Color(0xff1D1E20),
-                          ),
-                        ),
-                        SizedBox(height: 5,),
-                        Text("£99",
-                            style: TextStyle(
-                                color: Color(0xff1D1E20),
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(32),
-                          child: Image.asset(
-                            "assets/images/per1.png",
-                            height: 200,
-                            width: 150,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Positioned(
-                          top: 22,
-                          right: 22,
-                          child: Image.asset("assets/images/Heart.png"),
-                        ),
-
-                      ],
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Trail Running Jacket Nike \nWind runner",
-                          style: TextStyle(
-                            color: Color(0xff1D1E20),
-                          ),
-                        ),
-                        SizedBox(height: 5,),
-                        Text("£79",
-                            style: TextStyle(
-                                color: Color(0xff1D1E20),
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                      child: Image.asset("assets/images/Cart.png")),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(32),
-                          child: Image.asset(
-                            "assets/images/per5.png",
-                            height: 200,
-                            width: 150,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        Positioned(
-                          top: 22,
-                          right: 22,
-                          child: Image.asset("assets/images/Heart.png"),
-                        ),
-                      ],
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Nike Sport Wear Club \nFlees",
-                          style: TextStyle(
-                            color: Color(0xff1D1E20),
-                          ),
-                        ),
-                        SizedBox(height: 5,),
-                        Text("£99",
-                            style: TextStyle(
-                                color: Color(0xff1D1E20),
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Stack(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(32),
-                          child: Image.asset(
-                            "assets/images/per6.png",
-                            height: 200,
-                            width: 150,
-                          ),
-                        ),
-                        Positioned(
-                          top: 22,
-                          right: 22,
-                          child: Image.asset("assets/images/Heart.png"),
-                        ),
-                      ],
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Nike Sport Wear Club \nFlees",
-                          style: TextStyle(
-                            color: Color(0xff1D1E20),
-                          ),
-                        ),
-                        SizedBox(height: 5,),
-                        Text("£69",
-                            style: TextStyle(
-                                color: Color(0xff1D1E20),
-                                fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 28.0, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Hemendra",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    "Welcome to laza",
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12,
+                        color: Colors.grey.shade600),
+                  ),
+                ],
+              ),
             ),
-          ),
-          // SizedBox(
-          //   width: double.infinity,
-          //   child: GridView.builder(
-          //     physics: const NeverScrollableScrollPhysics(),
-          //     shrinkWrap: true,
-          //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //         crossAxisCount: 2,
-          //         crossAxisSpacing: 2,
-          //         mainAxisSpacing: 2,
-          //       childAspectRatio: 0.9
-          //     ),
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return const Column(
-          //         children: [
-          //           ClistView(),
-          //         ],
-          //       );
-          //     },
-          //   ),
-          // ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 300,
+                    child: CustomTextField(
+                      controller: _controller,
+                      hintText: "Search...",
+                      prefixIcon: const Icon(Icons.search),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Image.asset("assets/images/Voice.png"),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Choose Brand",
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12,
+                        color: Colors.grey.shade600),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FutureBuilder<List<ProductCategory>>(
+                future: ApiClient.getProductCategory(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return const Center(
+                      child: Text("Error occurred"),
+                    );
+                  }
+                  return Container(
+                    // height: 40,
+                    // width: 100,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: snapshot.data!.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        ProductCategory productCategory = snapshot.data![index];
+                        return Container(
+                          height: 40,
+                          width: 100,
+                          child: ListTile(
+                            leading: Text("3425"),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "New Arrival",
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.review);
+                    },
+                    child: Text(
+                      "View All",
+                      style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 12,
+                          color: Colors.grey.shade600),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            FutureBuilder<List<Product>>(
+              future: ApiClient.getAllProduct(limit: "100"),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (snapshot.hasError) {
+                  return const Center(
+                    child: Text("Error occured"),
+                  );
+                }
+                return GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.8,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                  ),
+                  itemCount: snapshot.data!.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    Product product = snapshot.data![index];
+                    return PageCard(
+                      imgPart: product.images![0],
+                      price: product.price.toString(),
+                      onTap: () {
+                        Get.to(() => DetailScreen(product: product));
+                      },
+                      name: product.title.toString(),
+                    );
+                  },
+                );
+              },
+            )
+          ],
+        ),
       ),
-      bottomNavigationBar: const MyButtomNarBar(),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const [
-      //     BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.favorite),label: "Favourite"),
-      //     BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings"),
-      //   ],
-      // ),
     );
   }
 }

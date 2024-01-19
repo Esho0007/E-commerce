@@ -1,8 +1,4 @@
-import 'package:bootcamp_pratice/common/routes/names.dart';
-import 'package:bootcamp_pratice/pages/widget/custom_button.dart';
-import 'package:bootcamp_pratice/pages/widget/custom_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {
   final _name = TextEditingController();
@@ -14,6 +10,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffefefe),
       body: ListView(
         children: [
           const Padding(
@@ -103,7 +100,7 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(
                       width: 15,
                     ),
-                    const Text("I have agree to our Terms and Conditions")
+                    const Text("I have agree to our Terms and Conditions"),
                   ],
                 ),
               ],
@@ -117,8 +114,7 @@ class SignUpScreen extends StatelessWidget {
               color: const Color(0xff100D40),
               name: "Sign Up",
               ontap: () {
-                Get.offAllNamed(AppRoutes.home);
-                //  Navigator.pushNamed(context, '/HomeScreen');
+                Navigator.pushNamed(context, '/HomeScreen');
               }),
           const SizedBox(
             height: 15,

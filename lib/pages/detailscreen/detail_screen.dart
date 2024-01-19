@@ -1,25 +1,31 @@
+import 'package:bootcamp_practice/model/product%20model/product.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../common/routes/names.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  final Product product;
+  const DetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffefefe),
       body: ListView(
         children: [
           const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             height: 350,
             width: 300,
             child: Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(32),
-                  child: Image.asset(
-                    "assets/images/IMG.png",
+                  //borderRadius: BorderRadius.circular(32),
+                  child: Image.network(
+                    product.images[0],
                     height: 350,
                     width: double.infinity,
                     fit: BoxFit.fill,
@@ -28,26 +34,27 @@ class DetailScreen extends StatelessWidget {
                 Positioned(
                   top: 22,
                   left: 22,
-                  child: Image.asset("assets/images/Back.png"),
+                  child: InkWell(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: Image.asset("assets/images/Back.png")),
                 ),
                 Positioned(
                   top: 22,
                   right: 22,
-                  child: Image.asset("assets/images/Cart.png"),
-                ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  left: 0,
-                  bottom: -350,
-                  child: Image.asset("assets/images/Log.png"),
+                  child: InkWell(
+                      onTap: (){
+                        Get.toNamed(AppRoutes.cartscreen);
+                      },
+                      child: Image.asset("assets/images/Cart.png")),
                 ),
               ],
             ),
           ),
-          const Column(
+           Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,20 +73,21 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Nike Club Flee",
-                      style: TextStyle(
+                      product.title.toString(),
+                      overflow: TextOverflow.fade,
+                      style: const TextStyle(
                           color: Color(0xff1D1E20),
-                          fontSize: 26,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "£99",
-                      style: TextStyle(
+                      product.price.toString(),
+                      style: const TextStyle(
                           color: Color(0xff1D1E20),
                           fontSize: 26,
                           fontWeight: FontWeight.bold),
@@ -95,13 +103,11 @@ class DetailScreen extends StatelessWidget {
           Row(
             children: [
               const Spacer(),
-              Image.asset("assets/images/Rec1.png"),
+              Image.network (product.images[0],height: 80,width: 80),
               const Spacer(),
-              Image.asset("assets/images/Rec2.png"),
+              Image.network( product.images[1],height: 80,width: 80),
               const Spacer(),
-              Image.asset("assets/images/Rec3.png"),
-              const Spacer(),
-              Image.asset("assets/images/Rec4.png"),
+              Image.network( product.images[2],height: 80,width: 80),
               const Spacer(),
             ],
           ),
@@ -222,24 +228,24 @@ class DetailScreen extends StatelessWidget {
               )
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 28.0),
+           Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 28.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Description",
                   style: TextStyle(
                       color: Color(0xff1D1E20),
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  "The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with",
-                  style: TextStyle(
+                  product.description.toString(),
+                  style: const TextStyle(
                     color: Color(0xff8F959E),
                     fontSize: 16,
                   ),

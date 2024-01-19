@@ -29,18 +29,18 @@ class CustomTextField extends StatelessWidget {
       obscureText: isObscureText!,
       style: const TextStyle(color: Colors.black, fontSize: 14),
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.only(top: 12),
+          //contentPadding: const EdgeInsets.only(top: 12),
           constraints:
               BoxConstraints(maxHeight: height * 0.099, maxWidth: width),
           filled: true,
-          fillColor: Colors.grey.shade200,
+          fillColor: const Color(0xfff5f6fa),
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey.shade600, fontSize: 16),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           prefixIconColor: Colors.grey,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
               color: Colors.grey,
               width: 1.0,
